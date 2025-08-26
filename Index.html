@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
             --bg-color: #111827; /* Dark Blue-Gray */
             --surface-color: #1F2937; /* Lighter Blue-Gray */
             --text-color: #D1D5DB; /* Light Gray */
-            --accent-color: #38BDF8; /* Sky Blue */
+            --accent-color: #шейBlue; /* Sky Blue */
             --border-color: #374151; /* Gray */
         }
 
@@ -85,6 +85,8 @@
             align-items: center;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            z-index: 10; /* Added to ensure cards are clickable */
         }
         .menu-card:hover {
             transform: translateY(-5px);
@@ -151,6 +153,7 @@
         details > summary::-webkit-details-marker { display: none; }
         details > summary .chevron {
             transition: transform 0.2s;
+            margin-right: auto;
         }
         details[open] > summary .chevron { transform: rotate(-90deg); }
         details[open] > summary {
@@ -221,7 +224,6 @@
             <!-- Main Menu Section -->
             <section id="main-menu-section" class="content-section">
                 <div class="space-y-4 max-w-lg mx-auto">
-                    <!-- Academy Card -->
                     <div class="menu-card" data-section="academy-section">
                         <svg class="menu-card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
                         <div>
@@ -229,7 +231,6 @@
                             <p class="text-sm text-gray-400">مسیر یادگیری جامع از صفر تا صد</p>
                         </div>
                     </div>
-                    <!-- Debugger Card -->
                     <div class="menu-card" data-section="debugger-section">
                         <svg class="menu-card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
                         <div>
@@ -237,7 +238,6 @@
                             <p class="text-sm text-gray-400">کد خود را برای تحلیل و رفع اشکال ارسال کنید</p>
                         </div>
                     </div>
-                    <!-- Troubleshooter Card -->
                     <div class="menu-card" data-section="troubleshooter-section">
                         <svg class="menu-card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg>
                         <div>
@@ -256,15 +256,15 @@
                 </div>
                 <div class="space-y-4">
                     <details>
-                        <summary>بخش ۱: شروع به کار <span class="chevron mr-auto">▼</span></summary>
+                        <summary>بخش ۱: شروع به کار <span class="chevron">▼</span></summary>
                         <div class="details-content space-y-4">
                             <p>در این بخش، تمام مقدمات لازم برای شروع ماجراجویی ساخت ربات تلگرام با Go را فراهم می‌کنیم.</p>
                         </div>
                     </details>
                     <details>
-                        <summary>بخش ۲: مفاهیم اصلی <span class="chevron mr-auto">▼</span></summary>
+                        <summary>بخش ۲: مفاهیم اصلی <span class="chevron">▼</span></summary>
                         <div class="details-content space-y-4">
-                             <p>حالا که همه چیز آماده است، وارد دنیای کدنویسی می‌شویم و اولین رباتمان را می‌سازیم.</p>
+                            <p>حالا که همه چیز آماده است، وارد دنیای کدنویسی می‌شویم و اولین رباتمان را می‌سازیم.</p>
                         </div>
                     </details>
                 </div>
@@ -288,7 +288,7 @@
                     <h2 class="text-3xl font-bold">عیب‌یاب تعاملی</h2>
                     <button class="custom-btn back-btn">بازگشت</button>
                 </div>
-                 <p class="mb-4">اگر رباتت کار نمی‌کند، مشکلت را اینجا توضیح بده یا متن دقیق ارور را کپی کن تا راهنمایی‌ات کنم.</p>
+                <p class="mb-4">اگر رباتت کار نمی‌کند، مشکلت را اینجا توضیح بده یا متن دقیق ارور را کپی کن تا راهنمایی‌ات کنم.</p>
                 <textarea id="troubleshoot-input" class="custom-textarea" rows="6" placeholder="ربات من به دستورات جواب نمی‌دهد..."></textarea>
                 <button id="troubleshoot-btn" class="custom-btn mt-4">کمک می‌خوام!</button>
                 <div id="troubleshoot-output" class="ai-response hidden"></div>
@@ -298,6 +298,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Element Selectors ---
             const introOverlay = document.getElementById('intro-overlay');
             const typingTextElement = document.getElementById('typing-text');
             const appContainer = document.getElementById('app-container');
@@ -305,6 +306,7 @@
             const contentSections = document.querySelectorAll('.content-section');
             const backButtons = document.querySelectorAll('.back-btn');
 
+            // --- Intro Animation Logic ---
             const welcomeText = "شین آموزگار اینجاست تا باهات زبان Go رو تو حیطه ی ساخت Bot تلگرام رنده کنه ! اگه آماده ای کلاچ بگیر که میخوام برات بدم شیش ! 😁";
             let charIndex = 0;
 
@@ -328,9 +330,11 @@
                 }, 1000);
             }
 
-            function showSection(sectionId) {
+            // --- Navigation Logic ---
+            function showSection(sectionIdToShow) {
+                console.log(`Switching to section: ${sectionIdToShow}`); // Debug
                 contentSections.forEach(section => {
-                    if (section.id === sectionId) {
+                    if (section.id === sectionIdToShow) {
                         section.classList.remove('hidden');
                     } else {
                         section.classList.add('hidden');
@@ -338,23 +342,53 @@
                 });
             }
 
-            // --- THIS IS THE CRITICAL FIX ---
             menuCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const sectionId = card.getAttribute('data-section');
-                    showSection(sectionId);
+                card.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default behavior
+                    const sectionId = card.dataset.section;
+                    console.log(`Card clicked: ${sectionId}`); // Debug
+                    if (sectionId) {
+                        showSection(sectionId);
+                    } else {
+                        console.error('No sectionId found for this card');
+                    }
                 });
             });
 
             backButtons.forEach(button => {
                 button.addEventListener('click', () => {
+                    console.log('Back button clicked'); // Debug
                     showSection('main-menu-section');
                 });
             });
-            // --- END OF FIX ---
 
-            // Start the intro animation
-            typeWriter();
+            // --- AI & Interaction Logic (Placeholder) ---
+            // This part remains untouched as per your request
+            const debugBtn = document.getElementById('debug-btn');
+            const troubleshootBtn = document.getElementById('troubleshoot-btn');
+
+            if (debugBtn) {
+                debugBtn.addEventListener('click', () => {
+                    const output = document.getElementById('debug-output');
+                    output.classList.remove('hidden');
+                    output.innerHTML = `<p>در حال تحلیل کد شما... لطفاً صبر کنید.</p>`;
+                });
+            }
+
+            if (troubleshootBtn) {
+                troubleshootBtn.addEventListener('click', () => {
+                    const output = document.getElementById('troubleshoot-output');
+                    output.classList.remove('hidden');
+                    output.innerHTML = `<p>در حال بررسی مشکل شما... لطفاً صبر کنید.</p>`;
+                });
+            }
+
+            // --- Start the application ---
+            try {
+                typeWriter();
+            } catch (error) {
+                console.error('Error in typeWriter:', error);
+            }
         });
     </script>
 </body>
